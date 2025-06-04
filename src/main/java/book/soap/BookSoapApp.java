@@ -17,7 +17,7 @@ public class BookSoapApp {
 	
     @Bean
     public Endpoint endpoint(BookSoapServiceImpl bookSoapService) {
-        return Endpoint.publish("http://localhost:8080/ws/books", bookSoapService);
+        return Endpoint.publish("http://localhost:8081/ws/books", bookSoapService);
     }
 
 }

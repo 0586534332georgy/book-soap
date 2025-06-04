@@ -20,7 +20,7 @@ import jakarta.jws.WebService;
 import lombok.RequiredArgsConstructor;
 
 
-@WebService(endpointInterface = "book.soap.BookSoapService")
+@WebService(endpointInterface = "book.soap.service.BookSoapService")
 @Component
 @RequiredArgsConstructor
 public class BookSoapServiceImpl implements BookSoapService {
@@ -53,7 +53,7 @@ public class BookSoapServiceImpl implements BookSoapService {
     public List<BookCredentialsDto> getBooksByGenre(BookGenreEnum bookGenre) {
     	List<BookCredentialsDto> credentialsDto = new ArrayList<>();
         List<Book> books = bookRepo.findByCredential_BookGenre(bookGenre);
-        for (Book b : books) {
+        for (Book b : books) {        	
         	credentialsDto.add(BookCredentialsDto.build(b));
         }        
         return credentialsDto;

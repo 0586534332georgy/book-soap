@@ -6,8 +6,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import book.soap.api.BookStatusEnum;
 import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.*;
 
+@XmlRootElement(name = "bookStatus")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Getter
 @Setter
 @Entity

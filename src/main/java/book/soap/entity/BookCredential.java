@@ -14,9 +14,9 @@ public class BookCredential {
 	@Id
 	@Column(name = "id_book")
 	private Integer id;	
-	
+
 	@Enumerated(EnumType.STRING)
-	@Column(name = "book_genre")
+//	@Column(name = "book_genre")
 	private BookGenreEnum bookGenre; 
 	
 	@Column(name = "pages_amount")
