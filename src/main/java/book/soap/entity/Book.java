@@ -3,8 +3,14 @@ package book.soap.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
 import lombok.*;
 
+@XmlRootElement(name = "Book")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Getter
 @Setter
 @Entity
@@ -24,10 +30,12 @@ public class Book {
     @Column(name = "bookname")
     private String title;
     
+    @XmlTransient
     @OneToOne(mappedBy = "book")
     @JsonManagedReference
     private BookCredential credential;
 
+    @XmlTransient
     @OneToOne(mappedBy = "book")
     @JsonManagedReference
     private BookStatus status;
