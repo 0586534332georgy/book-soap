@@ -5,7 +5,7 @@ http://localhost:8081/ws/books?xsd
 
 
 POST	http://localhost:8081/ws/books
-
+Content-Type: text/xml; charset=utf-8
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                   xmlns:book="http://service.soap.book/">
